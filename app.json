@@ -5,13 +5,8 @@
     "go-kit",
     "go"
   ],
-  "image": "heroku/go:1.5",
+  "image": "heroku/go:1.6",
   "mount_dir": "src/github.com/heroku-examples/go-kit-ex1",
   "website": "http://github.com/heroku-examples/go-kit-ex1",
-  "repository": "http://github.com/heroku-examples/go-kit-ex1",
-  "env": {
-      "GO15VENDOREXPERIMENT": {
-          "value":"1"
-      }
-  }
+  "repository": "http://github.com/heroku-examples/go-kit-ex1"
 }
