@@ -1,6 +1,9 @@
 {
 	"ImportPath": "github.com/heroku-examples/go-kit-ex1",
 	"GoVersion": "go1.6",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/codahale/hdrhistogram",
@@ -19,6 +22,10 @@
 			"Rev": "f8fe4d35c4d3c7c57a0885cc0c6b5e24ac6f425a"
 		},
 		{
+			"ImportPath": "github.com/go-kit/kit/metrics/expvar",
+			"Rev": "f8fe4d35c4d3c7c57a0885cc0c6b5e24ac6f425a"
+		},
+		{
 			"ImportPath": "github.com/go-kit/kit/ratelimit",
 			"Rev": "f8fe4d35c4d3c7c57a0885cc0c6b5e24ac6f425a"
 		},
@@ -32,6 +39,10 @@
 		},
 		{
 			"ImportPath": "golang.org/x/net/context",
+			"Rev": "8968c61983e8f51a91b8c0ef25bf739278c89634"
+		},
+		{
+			"ImportPath": "golang.org/x/net/context/ctxhttp",
 			"Rev": "8968c61983e8f51a91b8c0ef25bf739278c89634"
 		},
 		{
