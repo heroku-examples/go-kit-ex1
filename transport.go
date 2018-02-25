@@ -1,12 +1,12 @@
 package main
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"net/http"
 
 	"github.com/go-kit/kit/endpoint"
-	"golang.org/x/net/context"
 )
 
 type addRequest struct {
@@ -33,7 +33,7 @@ func makeAddEndpoint(svc Counter) endpoint.Endpoint {
 	}
 }
 
-func decodeAddRequest(r *http.Request) (interface{}, error) {
+func decodeAddRequest(ctx context.Context, r *http.Request) (interface{}, error) {
 	var req addRequest
 	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
 		return nil, err
@@ -41,6 +41,6 @@ func decodeAddRequest(r *http.Request) (interface{}, error) {
 	return req, nil
 }
 
-func encodeResponse(w http.ResponseWriter, response interface{}) error {
+func encodeResponse(ctx context.Context, w http.ResponseWriter, response interface{}) error {
 	return json.NewEncoder(w).Encode(response)
 }

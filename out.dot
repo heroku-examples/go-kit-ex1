@@ -1,0 +1,20 @@
+digraph {
+	node [shape=box];
+	79706905 [label="github.com/heroku-examples/go-kit-ex1"];
+	1542327640 [label="github.com/VividCortex/gohistogram\nv1.0.0"];
+	1756365654 [label="github.com/go-kit/kit\nv0.6.0"];
+	3962660754 [label="github.com/go-logfmt/logfmt\nv0.3.0"];
+	1477303506 [label="github.com/go-stack/stack\nv1.7.0"];
+	1499966208 [label="github.com/juju/ratelimit\n1.0.1"];
+	1801388401 [label="github.com/kr/logfmt\nbranch master"];
+	2759993708 [label="golang.org/x/net\nbranch master"];
+	79706905 -> 1756365654;
+	79706905 -> 1499966208;
+	79706905 -> 2759993708;
+	1756365654 -> 1542327640;
+	1756365654 -> 3962660754;
+	1756365654 -> 1477303506;
+	1756365654 -> 1499966208;
+	1756365654 -> 2759993708;
+	3962660754 -> 1801388401;
+}

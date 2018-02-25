@@ -13,7 +13,9 @@ type jsonLogger struct {
 }
 
 // NewJSONLogger returns a Logger that encodes keyvals to the Writer as a
-// single JSON object.
+// single JSON object. Each log event produces no more than one call to
+// w.Write. The passed Writer must be safe for concurrent use by multiple
+// goroutines if the returned Logger will be used concurrently.
 func NewJSONLogger(w io.Writer) Logger {
 	return &jsonLogger{w}
 }
@@ -41,9 +43,6 @@ func merge(dst map[string]interface{}, k, v interface{}) {
 		key = safeString(x)
 	default:
 		key = fmt.Sprint(x)
-	}
-	if x, ok := v.(error); ok {
-		v = safeError(x)
 	}
 
 	// We want json.Marshaler and encoding.TextMarshaller to take priority over
